@@ -21,14 +21,16 @@ export default function AppNavbar() {
   const router = useRouter();
   const { data: session } = useSession();
   return (
-    <nav className="border-b border-gray-200 bg-white">
-      <div className="flex items-center h-16 px-4 mx-auto justify-between">
+    <nav className="border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+      <div className="flex items-center h-16 px-4 mx-auto max-w-7xl justify-between">
         <Link
           href="/"
-          className="flex items-center gap-x-2 text-xl font-bold text-primary"
+          className="flex items-center gap-x-3 text-2xl font-black text-slate-900 tracking-tight"
         >
-          <BriefcaseBusiness />
-          Job Tracker
+          <div className="p-2 bg-red-50 rounded-xl">
+            <BriefcaseBusiness className="text-red-500 h-6 w-6" />
+          </div>
+          <span>JobTracker</span>
         </Link>
         <div className="flex items-center gap-4">
           {session?.user ? (
@@ -36,7 +38,7 @@ export default function AppNavbar() {
               <Link href="/dashboard">
                 <Button
                   variant="ghost"
-                  className="text-gray-700 hover:text-black"
+                  className="text-sm font-semibold text-slate-600 hover:text-red-500 transition-colors"
                 >
                   Dashboard
                 </Button>
@@ -45,10 +47,10 @@ export default function AppNavbar() {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="relative h-8 w-8 rounded-full"
+                    className="relative h-10 w-10 rounded-full"
                   >
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-primary/10 text-primary uppercase">
+                    <Avatar className="h-10 w-10 border-2 border-white shadow-sm hover:shadow-md transition-shadow">
+                      <AvatarFallback className="bg-pink-100 text-pink-600 font-bold uppercase text-xs">
                         {session.user.name?.charAt(0) ||
                           session.user.email?.charAt(0)}
                       </AvatarFallback>
