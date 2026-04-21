@@ -21,13 +21,6 @@ import { Button } from "./ui/button";
 import CreateJobAppDialog from "./CreateJobDialog";
 import JobApplicationCard from "./JobApplicationCard";
 import { useBoards } from "@/hooks/useBoards";
-import {
-  closestCorners,
-  DndContext,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
 
 interface KanbanBoardProps {
   board: Board;
