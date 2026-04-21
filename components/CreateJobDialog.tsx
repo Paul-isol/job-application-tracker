@@ -57,15 +57,15 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
       <>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button variant="outline" className="w-full h-11 border-dashed border-slate-200 bg-white text-slate-500 hover:text-slate-900 hover:bg-slate-50 hover:border-slate-300 transition-all gap-2 font-medium shadow-sm">
+            <Button variant="outline" className="w-full h-12 border-dashed border-[#A3B19B]/60 bg-transparent text-[#6B7B6B] hover:text-[#2C3D30] hover:bg-[#F1EFE7]/50 hover:border-[#8C9A81] transition-all gap-2 font-serif font-medium rounded-xl shadow-none">
               <Plus className="h-4 w-4" />
               <span>Add Job</span>
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[550px] p-0 overflow-hidden border-slate-200 shadow-2xl">
+          <DialogContent className="sm:max-w-[550px] p-0 overflow-hidden border-[#E8E3D5] shadow-2xl rounded-3xl">
             <DialogHeader className="p-6 pb-0">
-              <DialogTitle className="text-xl font-bold text-slate-900">New Job Application</DialogTitle>
-              <DialogDescription className="text-slate-500">
+              <DialogTitle className="text-2xl font-serif font-bold text-[#2C3D30]">New Job Application</DialogTitle>
+              <DialogDescription className="text-[#6B7B6B]">
                 Enter the details of the job opportunity to start tracking it.
               </DialogDescription>
             </DialogHeader>
@@ -74,25 +74,25 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                 {/* Row 1: Company & Position */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <Label htmlFor="company" className="text-[13px] font-semibold text-slate-700">Company <span className="text-red-500">*</span></Label>
+                    <Label htmlFor="company" className="text-[13px] font-semibold text-slate-700">Company <span className="text-[#E06D60]">*</span></Label>
                     <Input 
                         type="text" 
                         id="company" 
                         required 
                         placeholder="Google, Stripe, etc."
-                        className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all"
+                        className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg"
                         value={formData.company}
                         onChange={(e)=>setFormData({...formData, company: e.target.value})}
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor="position" className="text-[13px] font-semibold text-slate-700">Position <span className="text-red-500">*</span></Label>
+                    <Label htmlFor="position" className="text-[13px] font-semibold text-slate-700">Position <span className="text-[#E06D60]">*</span></Label>
                     <Input 
                         type="text" 
                         id="position" 
                         required 
                         placeholder="Frontend Engineer"
-                        className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all"
+                        className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg"
                         value={formData.position}
                         onChange={(e)=>setFormData({...formData, position: e.target.value})}
                     />
@@ -107,7 +107,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                         type="text" 
                         id="location" 
                         placeholder="Remote / New York"
-                        className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all"
+                        className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg"
                         value={formData.location}
                         onChange={(e)=>setFormData({...formData, location: e.target.value})}
                     />
@@ -118,7 +118,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                         type="text" 
                         id="salary" 
                         placeholder="e.g. $120k - $150k"
-                        className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all text-emerald-600 font-medium placeholder:font-normal placeholder:text-slate-400"
+                        className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg text-[#8C9A81] font-medium placeholder:font-normal placeholder:text-slate-400"
                         value={formData.salary}
                         onChange={(e)=>setFormData({...formData, salary: e.target.value})}
                     />
@@ -132,7 +132,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                     type="url" 
                     id="jobUrl" 
                     placeholder="https://linkedin.com/jobs/..."
-                    className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all"
+                    className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg"
                     value={formData.jobUrl}
                     onChange={(e)=>setFormData({...formData, jobUrl: e.target.value})}
                   />
@@ -145,7 +145,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                     type="text"
                     id="tag"
                     placeholder="Separate with commas (e.g. Next.js, AI, Full-time)"
-                    className="h-10 border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all"
+                    className="h-10 border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg"
                     value={formData.tag}
                     onChange={(e)=>setFormData({...formData, tag: e.target.value})}
                   />
@@ -159,7 +159,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                         rows={3}
                         id="description"
                         placeholder="Key responsibilities or tech stack..."
-                        className="resize-none border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all text-[13px]"
+                        className="resize-none border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg text-[13px]"
                         value={formData.description}
                         onChange={(e)=>setFormData({...formData, description: e.target.value})}
                     />
@@ -170,7 +170,7 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                         rows={3}
                         id="note"
                         placeholder="Add your own thoughts or reminders..."
-                        className="resize-none border-slate-200 focus:border-blue-400 focus:ring-blue-100 transition-all text-[13px]"
+                        className="resize-none border-[#E8E3D5] focus:border-[#8C9A81] focus:ring-[#8C9A81]/20 transition-all rounded-lg text-[13px]"
                         value={formData.note}
                         onChange={(e)=>setFormData({...formData, note: e.target.value})}
                     />
@@ -178,11 +178,11 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
                 </div>
               </div>
 
-              <DialogFooter className="mt-8 pt-6 border-t border-slate-100">
+              <DialogFooter className="mt-8 pt-6 border-t border-[#E8E3D5]">
                   <DialogClose asChild>
-                      <Button variant="ghost" type="button" className="text-slate-500 hover:text-slate-900">Cancel</Button>
+                      <Button variant="ghost" type="button" className="text-[#6B7B6B] hover:text-[#2C3D30]">Cancel</Button>
                   </DialogClose>
-                  <Button type="submit" disabled={isSubmitting} className="bg-slate-900 text-white hover:bg-slate-800 shadow-md transition-all px-8">
+                  <Button type="submit" disabled={isSubmitting} className="bg-[#8C9A81] text-white hover:bg-[#6e7a64] shadow-md transition-all px-8 rounded-xl">
                     {isSubmitting ? <Spinner /> : "Create Application"}
                   </Button>
               </DialogFooter>
@@ -191,4 +191,4 @@ export default function CreateJobAppDialog({columnId, boardId}: JobAppCreateDial
         </Dialog>
       </>
     );
-}
+}
